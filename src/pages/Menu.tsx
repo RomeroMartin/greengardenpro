@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-// Placeholder menu images — reemplazar con las reales
 const menuAlmuerzos = Array.from({ length: 19 }, (_, i) => ({
   src: `/images/menu${String(i + 1).padStart(2, "0")}.webp`,
   alt: `Menú almuerzo ${i + 1}`,
 }));
 
-const menuMeriendas = Array.from({ length: 2 }, (_, i) => ({
+// Menú Sin TACC (se muestra al final de almuerzos)
+const menuTacc = { src: "/images/menu-tacc.webp", alt: "Menú Sin TACC" };
+
+const menuMeriendas = Array.from({ length: 4 }, (_, i) => ({
   src: `/images/merienda${String(i + 1).padStart(2, "0")}.webp`,
   alt: `Menú merienda ${i + 1}`,
 }));
@@ -40,6 +42,14 @@ const MenuPage = () => {
             />
           </div>
         ))}
+        {/* Menú Sin TACC */}
+        <div className="w-full max-w-[1000px] text-center">
+          <img
+            src={menuTacc.src}
+            alt={menuTacc.alt}
+            className="block mx-auto w-auto max-w-full max-h-[calc(100vh-12vh-4rem)] h-auto object-contain rounded-lg shadow-md"
+          />
+        </div>
       </div>
 
       {/* Desayunos & Meriendas */}
