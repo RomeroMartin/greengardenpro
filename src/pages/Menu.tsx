@@ -2,10 +2,13 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // Placeholder menu images — reemplazar con las reales
-const menuAlmuerzos = Array.from({ length: 19 }, (_, i) => ({
-  src: "/placeholder.svg",
-  alt: `Menú almuerzo ${i + 1}`,
-}));
+const menuAlmuerzos = [
+  { src: "/images/menu01.webp", alt: "Menú almuerzo 1" },
+  ...Array.from({ length: 18 }, (_, i) => ({
+    src: "/placeholder.svg",
+    alt: `Menú almuerzo ${i + 2}`,
+  })),
+];
 
 const menuMeriendas = Array.from({ length: 4 }, (_, i) => ({
   src: "/placeholder.svg",
