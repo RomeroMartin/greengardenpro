@@ -5,17 +5,16 @@ import AliadosCarousel from "@/components/AliadosCarousel";
 
 // Placeholder images — reemplazar con las reales
 const bannerImages = [
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
+  "/images/slide1.webp",
+  "/images/slide2.webp",
+  "/images/slide3.webp",
 ];
 
 const carouselImages = [
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
+  "/images/plato1.webp",
+  "/images/plato2.webp",
+  "/images/plato3.webp",
+  "/images/plato4.webp",
 ];
 
 const aliadosLogos = [
