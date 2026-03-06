@@ -18,13 +18,11 @@ const carouselImages = [
 ];
 
 const aliadosLogos = [
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
+  "/images/aliados/cocacola.jpg",
+  "/images/aliados/escorihuelagascon.png",
+  "/images/aliados/heineken.png",
+  "/images/aliados/losprados.jpg",
+  "/images/aliados/segafredo.png",
 ];
 
 const Index = () => {
@@ -69,13 +67,13 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-stretch gap-6 bg-muted rounded-xl p-6 shadow-md">
           <div className="grid grid-cols-2 gap-6">
             <img
-              src="/placeholder.svg"
-              alt="Playroom 1"
+              src="/images/play1.webp"
+              alt="Playroom - Juegos"
               className="w-full h-full object-cover rounded-xl"
             />
             <img
-              src="/placeholder.svg"
-              alt="Playroom 2"
+              src="/images/play2.webp"
+              alt="Playroom - Juguetes"
               className="w-full h-full object-cover rounded-xl"
             />
           </div>
