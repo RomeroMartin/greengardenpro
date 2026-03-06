@@ -42,11 +42,15 @@ const PlayroomPage = () => {
 
       {/* Gallery placeholder */}
       <div className="grid grid-cols-3 max-md:grid-cols-2 gap-4 mb-12">
-        {[1, 2, 3].map((i) => (
+        {[
+          { src: "/images/play1.webp", alt: "Playroom - Juegos" },
+          { src: "/images/play2.webp", alt: "Playroom - Juguetes" },
+          { src: "/images/play3.webp", alt: "Playroom - Casita" },
+        ].map((img, i) => (
           <img
             key={i}
-            src="/placeholder.svg"
-            alt={`Playroom ${i}`}
+            src={img.src}
+            alt={img.alt}
             className="w-full h-auto rounded-xl object-cover"
           />
         ))}
