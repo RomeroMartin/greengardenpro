@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
@@ -11,6 +11,8 @@ interface ImageGalleryProps {
 
 const ImageGallery = ({ images, initialIndex = 0, open, onOpenChange }: ImageGalleryProps) => {
   const [current, setCurrent] = useState(initialIndex);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   useEffect(() => {
     if (open) setCurrent(initialIndex);
@@ -19,6 +21,7 @@ const ImageGallery = ({ images, initialIndex = 0, open, onOpenChange }: ImageGal
   const prev = useCallback(() => setCurrent((c) => (c - 1 + images.length) % images.length), [images.length]);
   const next = useCallback(() => setCurrent((c) => (c + 1) % images.length), [images.length]);
 
+  // Keyboard navigation
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -29,6 +32,26 @@ const ImageGallery = ({ images, initialIndex = 0, open, onOpenChange }: ImageGal
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [open, prev, next, onOpenChange]);
+
+  // Touch/swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const diff = touchStartX.current - touchEndX.current;
+    const threshold = 50;
+    if (diff > threshold) next();
+    else if (diff < -threshold) prev();
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   if (!images.length) return null;
 
@@ -53,13 +76,20 @@ const ImageGallery = ({ images, initialIndex = 0, open, onOpenChange }: ImageGal
           <ChevronLeft size={36} />
         </button>
 
-        {/* Image */}
-        <img
-          src={images[current].src}
-          alt={images[current].alt}
-          className="max-w-[90vw] max-h-[85vh] object-contain select-none"
-          draggable={false}
-        />
+        {/* Image with swipe */}
+        <div
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          className="flex items-center justify-center w-full h-full"
+        >
+          <img
+            src={images[current].src}
+            alt={images[current].alt}
+            className="max-w-[90vw] max-h-[85vh] object-contain select-none"
+            draggable={false}
+          />
+        </div>
 
         {/* Next */}
         <button
