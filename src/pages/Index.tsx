@@ -42,20 +42,20 @@ const Index = () => {
       {/* Menu Cards */}
       <section className="flex justify-center gap-8 flex-wrap px-8 pb-16">
         <div className="bg-muted rounded-xl p-8 max-w-[380px] flex-1 shadow-md flex flex-col items-center text-center">
-          <h3 className="text-3xl font-display font-bold mb-4 text-foreground">
-            Almuerzos & Cenas
+          <h3 className="text-3xl font-display font-bold mb-4 text-foreground min-h-[4.5rem] flex items-center justify-center">
+            Almuerzos<br />&amp; Cenas
           </h3>
-          <p className="text-lg mb-6 text-muted-foreground">
+          <p className="text-lg mb-6 text-muted-foreground flex-1">
             Platos caseros, abundantes y con sabor único para todos los días.
           </p>
           <ActionButton to="/menu">Ver Menú</ActionButton>
         </div>
 
         <div className="bg-muted rounded-xl p-8 max-w-[380px] flex-1 shadow-md flex flex-col items-center text-center">
-          <h3 className="text-3xl font-display font-bold mb-4 text-foreground">
-            Desayunos & Meriendas
+          <h3 className="text-3xl font-display font-bold mb-4 text-foreground min-h-[4.5rem] flex items-center justify-center">
+            Desayunos<br />&amp; Meriendas
           </h3>
-          <p className="text-lg mb-6 text-muted-foreground">
+          <p className="text-lg mb-6 text-muted-foreground flex-1">
             Café, dulces y opciones para compartir momentos especiales.
           </p>
           <ActionButton to="/menu#menumerienda">Ver Menú</ActionButton>
