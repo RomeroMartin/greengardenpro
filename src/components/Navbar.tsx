@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, Instagram } from "lucide-react";
 
 const navItems = [
@@ -7,11 +7,32 @@ const navItems = [
   { label: "Menú", path: "/menu" },
   { label: "Playroom", path: "/playroom" },
   { label: "Nosotros", path: "/nosotros" },
+  { label: "Aliados", path: "/#aliados" },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (path: string) => {
+    setMobileOpen(false);
+    if (path === "/#aliados") {
+      if (location.pathname === "/") {
+        document.getElementById("aliados")?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          document.getElementById("aliados")?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
+  };
+
+  const isActive = (path: string) => {
+    if (path === "/#aliados") return false;
+    return location.pathname === path;
+  };
 
   return (
     <>
@@ -31,16 +52,23 @@ const Navbar = () => {
         <ul className="hidden md:flex flex-2 list-none gap-8 justify-center">
           {navItems.map((item) => (
             <li key={item.path}>
-              <Link
-                to={item.path}
-                className={`font-medium transition-all duration-200 hover:text-primary hover:scale-110 inline-block ${
-                  location.pathname === item.path
-                    ? "text-primary"
-                    : "text-foreground"
-                }`}
-              >
-                {item.label}
-              </Link>
+              {item.path === "/#aliados" ? (
+                <button
+                  onClick={() => handleNavClick(item.path)}
+                  className="font-medium transition-all duration-200 hover:text-primary hover:scale-110 inline-block text-foreground bg-transparent border-none cursor-pointer"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  to={item.path}
+                  className={`font-medium transition-all duration-200 hover:text-primary hover:scale-110 inline-block ${
+                    isActive(item.path) ? "text-primary" : "text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -92,13 +120,22 @@ const Navbar = () => {
         <ul className="list-none text-center mt-8 space-y-6">
           {navItems.map((item) => (
             <li key={item.path}>
-              <Link
-                to={item.path}
-                onClick={() => setMobileOpen(false)}
-                className="text-2xl font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {item.label}
-              </Link>
+              {item.path === "/#aliados" ? (
+                <button
+                  onClick={() => handleNavClick(item.path)}
+                  className="text-2xl font-medium text-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  to={item.path}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-2xl font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

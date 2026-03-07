@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ActionButton from "@/components/ActionButton";
 import ImageGallery from "@/components/ImageGallery";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const playroomImages = [
   { src: "/images/play1.webp", alt: "Playroom - Juegos" },
@@ -39,21 +40,21 @@ const PlayroomPage = () => {
 
   return (
     <div className="pt-[120px] pb-20 px-4 md:px-5 max-w-[1100px] mx-auto text-center">
-      <h1 className="font-display text-[26px] md:text-[32px] mb-8 text-foreground">
-        Bienvenidos a nuestro Playroom
-      </h1>
+      <AnimatedSection>
+        <h1 className="font-display text-[26px] md:text-[32px] mb-8 text-foreground">
+          Bienvenidos a nuestro Playroom
+        </h1>
 
-      {/* Gallery button */}
-      <div className="flex justify-center mb-10">
-        <button
-          onClick={() => setGalleryOpen(true)}
-          className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-dark hover:scale-105 text-center min-w-[220px]"
-        >
-          Ver galería
-        </button>
-      </div>
+        <div className="flex justify-center mb-10">
+          <button
+            onClick={() => setGalleryOpen(true)}
+            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-dark hover:scale-105 text-center min-w-[220px]"
+          >
+            Ver galería
+          </button>
+        </div>
+      </AnimatedSection>
 
-      {/* Gallery popup */}
       <ImageGallery
         images={playroomImages}
         initialIndex={0}
@@ -61,59 +62,61 @@ const PlayroomPage = () => {
         onOpenChange={setGalleryOpen}
       />
 
-      {/* Reglamento */}
-      <div className="bg-card p-6 md:p-9 rounded-2xl shadow-lg mb-12 text-center">
-        <h2 className="font-display text-2xl mb-5 text-foreground">
-          Reglamento
-        </h2>
-        <p className="font-display text-base leading-relaxed text-muted-foreground mb-5">
-          Nuestro espacio de juegos dedicado exclusivamente a nuestros
-          comensales más chicos. Para garantizar su felicidad, la seguridad es
-          muy importante, por ello les pedimos que conozcan nuestras normativas
-          antes de entrar:
-        </p>
-        <ol className="list-decimal pl-5 mb-5 text-left max-w-2xl mx-auto">
-          {playroomRules.map((rule, i) => (
-            <li
-              key={i}
-              className="font-display text-sm md:text-base leading-relaxed text-muted-foreground mb-3"
-            >
-              {rule}
-            </li>
-          ))}
-        </ol>
-        <p className="font-display text-base text-muted-foreground italic">
-          Este espacio fue creado exclusivamente para el entretenimiento de los
-          niños mientras disfrutan de una salida en familia. Agradecemos su
-          comprensión y colaboración.
-        </p>
-      </div>
-
-      {/* Instructivo cámaras */}
-      <div className="bg-card p-6 md:p-9 rounded-2xl shadow-lg text-center">
-        <h2 className="font-display text-2xl mb-5 text-foreground">
-          Instructivo para conectarse a las cámaras
-        </h2>
-        <ol className="list-decimal pl-5 mb-6 text-left max-w-2xl mx-auto">
-          {cameraSteps.map((step, i) => (
-            <li
-              key={i}
-              className="font-display text-sm md:text-base leading-relaxed text-muted-foreground mb-3"
-            >
-              {step}
-            </li>
-          ))}
-        </ol>
-        <div className="flex justify-center">
-          <ActionButton
-            href="http://192.168.1.108"
-            target="_blank"
-            className="min-w-[240px]"
-          >
-            Conectarse a Cámaras
-          </ActionButton>
+      <AnimatedSection delay={0.1}>
+        <div className="bg-card p-6 md:p-9 rounded-2xl shadow-lg mb-12 text-center">
+          <h2 className="font-display text-2xl mb-5 text-foreground">
+            Reglamento
+          </h2>
+          <p className="font-display text-base leading-relaxed text-muted-foreground mb-5">
+            Nuestro espacio de juegos dedicado exclusivamente a nuestros
+            comensales más chicos. Para garantizar su felicidad, la seguridad es
+            muy importante, por ello les pedimos que conozcan nuestras normativas
+            antes de entrar:
+          </p>
+          <ol className="list-decimal pl-5 mb-5 text-left max-w-2xl mx-auto">
+            {playroomRules.map((rule, i) => (
+              <li
+                key={i}
+                className="font-display text-sm md:text-base leading-relaxed text-muted-foreground mb-3"
+              >
+                {rule}
+              </li>
+            ))}
+          </ol>
+          <p className="font-display text-base text-muted-foreground italic">
+            Este espacio fue creado exclusivamente para el entretenimiento de los
+            niños mientras disfrutan de una salida en familia. Agradecemos su
+            comprensión y colaboración.
+          </p>
         </div>
-      </div>
+      </AnimatedSection>
+
+      <AnimatedSection delay={0.2}>
+        <div className="bg-card p-6 md:p-9 rounded-2xl shadow-lg text-center">
+          <h2 className="font-display text-2xl mb-5 text-foreground">
+            Instructivo para conectarse a las cámaras
+          </h2>
+          <ol className="list-decimal pl-5 mb-6 text-left max-w-2xl mx-auto">
+            {cameraSteps.map((step, i) => (
+              <li
+                key={i}
+                className="font-display text-sm md:text-base leading-relaxed text-muted-foreground mb-3"
+              >
+                {step}
+              </li>
+            ))}
+          </ol>
+          <div className="flex justify-center">
+            <ActionButton
+              href="http://192.168.1.108"
+              target="_blank"
+              className="min-w-[240px]"
+            >
+              Conectarse a Cámaras
+            </ActionButton>
+          </div>
+        </div>
+      </AnimatedSection>
     </div>
   );
 };
