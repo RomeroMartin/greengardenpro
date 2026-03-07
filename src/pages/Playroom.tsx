@@ -1,4 +1,12 @@
+import { useState } from "react";
 import ActionButton from "@/components/ActionButton";
+import ImageGallery from "@/components/ImageGallery";
+
+const playroomImages = [
+  { src: "/images/play1.webp", alt: "Playroom - Juegos" },
+  { src: "/images/play2.webp", alt: "Playroom - Juguetes" },
+  { src: "/images/play3.webp", alt: "Playroom - Casita" },
+];
 
 const playroomRules = [
   "Los niños ingresan solo acompañados por un adulto responsable que debe estar ocupando una mesa del restaurante.",
@@ -27,37 +35,34 @@ const cameraSteps = [
 ];
 
 const PlayroomPage = () => {
+  const [galleryOpen, setGalleryOpen] = useState(false);
+
   return (
-    <div className="pt-[120px] pb-20 px-5 max-w-[1100px] mx-auto text-center max-md:px-4 max-md:pt-[120px]">
-      <h1 className="font-display text-[32px] max-md:text-[26px] mb-8 text-foreground">
+    <div className="pt-[120px] pb-20 px-4 md:px-5 max-w-[1100px] mx-auto text-center">
+      <h1 className="font-display text-[26px] md:text-[32px] mb-8 text-foreground">
         Bienvenidos a nuestro Playroom
       </h1>
 
       {/* Gallery button */}
       <div className="flex justify-center mb-10">
-        <ActionButton to="#" className="min-w-[220px]">
+        <button
+          onClick={() => setGalleryOpen(true)}
+          className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-dark hover:scale-105 text-center min-w-[220px]"
+        >
           Ver galería
-        </ActionButton>
+        </button>
       </div>
 
-      {/* Gallery placeholder */}
-      <div className="grid grid-cols-3 max-md:grid-cols-2 gap-4 mb-12">
-        {[
-          { src: "/images/play1.webp", alt: "Playroom - Juegos" },
-          { src: "/images/play2.webp", alt: "Playroom - Juguetes" },
-          { src: "/images/play3.webp", alt: "Playroom - Casita" },
-        ].map((img, i) => (
-          <img
-            key={i}
-            src={img.src}
-            alt={img.alt}
-            className="w-full h-auto rounded-xl object-cover"
-          />
-        ))}
-      </div>
+      {/* Gallery popup */}
+      <ImageGallery
+        images={playroomImages}
+        initialIndex={0}
+        open={galleryOpen}
+        onOpenChange={setGalleryOpen}
+      />
 
       {/* Reglamento */}
-      <div className="bg-card p-9 max-md:p-6 rounded-2xl shadow-lg mb-12 text-center">
+      <div className="bg-card p-6 md:p-9 rounded-2xl shadow-lg mb-12 text-center">
         <h2 className="font-display text-2xl mb-5 text-foreground">
           Reglamento
         </h2>
@@ -71,7 +76,7 @@ const PlayroomPage = () => {
           {playroomRules.map((rule, i) => (
             <li
               key={i}
-              className="font-display text-base leading-relaxed text-muted-foreground mb-3"
+              className="font-display text-sm md:text-base leading-relaxed text-muted-foreground mb-3"
             >
               {rule}
             </li>
@@ -85,7 +90,7 @@ const PlayroomPage = () => {
       </div>
 
       {/* Instructivo cámaras */}
-      <div className="bg-card p-9 max-md:p-6 rounded-2xl shadow-lg text-center">
+      <div className="bg-card p-6 md:p-9 rounded-2xl shadow-lg text-center">
         <h2 className="font-display text-2xl mb-5 text-foreground">
           Instructivo para conectarse a las cámaras
         </h2>
@@ -93,7 +98,7 @@ const PlayroomPage = () => {
           {cameraSteps.map((step, i) => (
             <li
               key={i}
-              className="font-display text-base leading-relaxed text-muted-foreground mb-3"
+              className="font-display text-sm md:text-base leading-relaxed text-muted-foreground mb-3"
             >
               {step}
             </li>
