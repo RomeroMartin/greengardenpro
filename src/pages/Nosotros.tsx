@@ -1,3 +1,5 @@
+import AnimatedSection from "@/components/AnimatedSection";
+
 const paragraphs = [
   "Bienvenidos a Green Garden desde nuestra apertura en el año 2016 nos dedicamos a brindar una experiencia gastronómica única en nuestra ciudad. Pensamos en cada detalle, en cada receta y en cada sistema de cocción. Para ello, en nuestras instalaciones de Diag 74 y 49 y 50, contamos con un primer piso de producción equipado con cámaras de frío positivo y negativo, un sector de envasado al vacío, sectores de guardado, sectores de producción específica y próximamente panadería artesanal.",
   "Diseñamos una experiencia gastronómica basada en brindar lo mejor y atender cada necesidad de nuestros comensales.",
@@ -10,19 +12,21 @@ const paragraphs = [
 const NosotrosPage = () => {
   return (
     <div className="pt-[120px] pb-20 px-5 max-w-[1000px] mx-auto max-md:px-4 max-md:pt-[120px]">
-      <div className="bg-card p-12 max-md:p-8 rounded-2xl shadow-lg">
-        <h1 className="font-display text-[32px] max-md:text-[26px] text-center mb-9 text-foreground tracking-wider">
-          Un poco de nosotros
-        </h1>
-        {paragraphs.map((text, i) => (
-          <p
-            key={i}
-            className="font-display text-base max-md:text-[15px] leading-relaxed text-muted-foreground mb-6 text-justify"
-          >
-            {text}
-          </p>
-        ))}
-      </div>
+      <AnimatedSection>
+        <div className="bg-card p-12 max-md:p-8 rounded-2xl shadow-lg">
+          <h1 className="font-display text-[32px] max-md:text-[26px] text-center mb-9 text-foreground tracking-wider">
+            Un poco de nosotros
+          </h1>
+          {paragraphs.map((text, i) => (
+            <p
+              key={i}
+              className="font-display text-base max-md:text-[15px] leading-relaxed text-muted-foreground mb-6 text-justify"
+            >
+              {text}
+            </p>
+          ))}
+        </div>
+      </AnimatedSection>
     </div>
   );
 };
