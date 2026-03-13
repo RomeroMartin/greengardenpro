@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="flex-1">
           <Link to="/">
             <img
-              src="/images/logo.png"
+              src={assetPath("images/logo.png")}
               alt="Green Garden"
               className="h-[70px] md:h-[90px] max-h-[100px]"
             />
