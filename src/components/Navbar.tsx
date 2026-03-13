@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, Instagram } from "lucide-react";
+import { assetPath } from "@/lib/assetPath";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -41,7 +42,7 @@ const Navbar = () => {
         <div className="flex-1">
           <Link to="/">
             <img
-              src="/images/logo.png"
+              src={assetPath("images/logo.png")}
               alt="Green Garden"
               className="h-[70px] md:h-[90px] max-h-[100px]"
             />
@@ -160,7 +161,7 @@ const Navbar = () => {
         </div>
 
         <div className="mt-auto pb-8">
-          <img src="/images/logo.png" alt="Green Garden" className="h-[70px]" />
+          <img src={assetPath("images/logo.png")} alt="Green Garden" className="h-[70px]" />
         </div>
       </div>
     </>

@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ImageGallery from "@/components/ImageGallery";
+import { assetPath } from "@/lib/assetPath";
 
 const menuAlmuerzos = Array.from({ length: 19 }, (_, i) => ({
-  src: `/images/menu${String(i + 1).padStart(2, "0")}.webp`,
+  src: assetPath(`images/menu${String(i + 1).padStart(2, "0")}.webp`),
   alt: `Menú almuerzo ${i + 1}`,
 }));
 
-const menuTacc = { src: "/images/menu-tacc.webp", alt: "Menú Sin TACC" };
+const menuTacc = { src: assetPath("images/menu-tacc.webp"), alt: "Menú Sin TACC" };
 
 const menuMeriendas = Array.from({ length: 4 }, (_, i) => ({
-  src: `/images/merienda${String(i + 1).padStart(2, "0")}.webp`,
+  src: assetPath(`images/merienda${String(i + 1).padStart(2, "0")}.webp`),
   alt: `Menú merienda ${i + 1}`,
 }));
 

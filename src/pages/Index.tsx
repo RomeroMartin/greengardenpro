@@ -3,26 +3,27 @@ import InfiniteCarousel from "@/components/InfiniteCarousel";
 import ActionButton from "@/components/ActionButton";
 import AliadosCarousel from "@/components/AliadosCarousel";
 import AnimatedSection from "@/components/AnimatedSection";
+import { assetPath } from "@/lib/assetPath";
 
 const bannerImages = [
-  "/images/slide1.webp",
-  "/images/slide2.webp",
-  "/images/slide3.webp",
+  assetPath("images/slide1.webp"),
+  assetPath("images/slide2.webp"),
+  assetPath("images/slide3.webp"),
 ];
 
 const carouselImages = [
-  "/images/plato1.webp",
-  "/images/plato2.webp",
-  "/images/plato3.webp",
-  "/images/plato4.webp",
+  assetPath("images/plato1.webp"),
+  assetPath("images/plato2.webp"),
+  assetPath("images/plato3.webp"),
+  assetPath("images/plato4.webp"),
 ];
 
 const aliadosLogos = [
-  "/images/aliados/cocacola.jpg",
-  "/images/aliados/escorihuelagascon.png",
-  "/images/aliados/heineken.png",
-  "/images/aliados/losprados.jpg",
-  "/images/aliados/segafredo.png",
+  assetPath("images/aliados/cocacola.jpg"),
+  assetPath("images/aliados/escorihuelagascon.png"),
+  assetPath("images/aliados/heineken.png"),
+  assetPath("images/aliados/losprados.jpg"),
+  assetPath("images/aliados/segafredo.png"),
 ];
 
 const Index = () => {
@@ -72,13 +73,13 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-stretch gap-6 bg-muted rounded-xl p-6 shadow-md">
             <div className="grid grid-cols-2 gap-6">
               <img
-                src="/images/play1.webp"
+                src={assetPath("images/play1.webp")}
                 alt="Playroom - Juegos"
                 className="w-full h-full object-cover rounded-xl"
                 loading="lazy"
               />
               <img
-                src="/images/play2.webp"
+                src={assetPath("images/play2.webp")}
                 alt="Playroom - Juguetes"
                 className="w-full h-full object-cover rounded-xl"
                 loading="lazy"
