@@ -2,11 +2,12 @@ import { useState } from "react";
 import ActionButton from "@/components/ActionButton";
 import ImageGallery from "@/components/ImageGallery";
 import AnimatedSection from "@/components/AnimatedSection";
+import { assetPath } from "@/lib/assetPath";
 
 const playroomImages = [
-  { src: "/images/play1.webp", alt: "Playroom - Juegos" },
-  { src: "/images/play2.webp", alt: "Playroom - Juguetes" },
-  { src: "/images/play3.webp", alt: "Playroom - Casita" },
+  { src: assetPath("images/play1.webp"), alt: "Playroom - Juegos" },
+  { src: assetPath("images/play2.webp"), alt: "Playroom - Juguetes" },
+  { src: assetPath("images/play3.webp"), alt: "Playroom - Casita" },
 ];
 
 const playroomRules = [

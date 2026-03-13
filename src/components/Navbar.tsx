@@ -161,7 +161,7 @@ const Navbar = () => {
         </div>
 
         <div className="mt-auto pb-8">
-          <img src="/images/logo.png" alt="Green Garden" className="h-[70px]" />
+          <img src={assetPath("images/logo.png")} alt="Green Garden" className="h-[70px]" />
         </div>
       </div>
     </>

@@ -73,13 +73,13 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-stretch gap-6 bg-muted rounded-xl p-6 shadow-md">
             <div className="grid grid-cols-2 gap-6">
               <img
-                src="/images/play1.webp"
+                src={assetPath("images/play1.webp")}
                 alt="Playroom - Juegos"
                 className="w-full h-full object-cover rounded-xl"
                 loading="lazy"
               />
               <img
-                src="/images/play2.webp"
+                src={assetPath("images/play2.webp")}
                 alt="Playroom - Juguetes"
                 className="w-full h-full object-cover rounded-xl"
                 loading="lazy"
