@@ -3,26 +3,27 @@ import InfiniteCarousel from "@/components/InfiniteCarousel";
 import ActionButton from "@/components/ActionButton";
 import AliadosCarousel from "@/components/AliadosCarousel";
 import AnimatedSection from "@/components/AnimatedSection";
+import { assetPath } from "@/lib/assetPath";
 
 const bannerImages = [
-  "/images/slide1.webp",
-  "/images/slide2.webp",
-  "/images/slide3.webp",
+  assetPath("images/slide1.webp"),
+  assetPath("images/slide2.webp"),
+  assetPath("images/slide3.webp"),
 ];
 
 const carouselImages = [
-  "/images/plato1.webp",
-  "/images/plato2.webp",
-  "/images/plato3.webp",
-  "/images/plato4.webp",
+  assetPath("images/plato1.webp"),
+  assetPath("images/plato2.webp"),
+  assetPath("images/plato3.webp"),
+  assetPath("images/plato4.webp"),
 ];
 
 const aliadosLogos = [
-  "/images/aliados/cocacola.jpg",
-  "/images/aliados/escorihuelagascon.png",
-  "/images/aliados/heineken.png",
-  "/images/aliados/losprados.jpg",
-  "/images/aliados/segafredo.png",
+  assetPath("images/aliados/cocacola.jpg"),
+  assetPath("images/aliados/escorihuelagascon.png"),
+  assetPath("images/aliados/heineken.png"),
+  assetPath("images/aliados/losprados.jpg"),
+  assetPath("images/aliados/segafredo.png"),
 ];
 
 const Index = () => {

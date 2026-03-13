@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, Instagram } from "lucide-react";
+import { assetPath } from "@/lib/assetPath";
 
 const navItems = [
   { label: "Home", path: "/" },
