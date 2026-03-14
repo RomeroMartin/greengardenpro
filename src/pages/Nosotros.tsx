@@ -1,5 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
-import { MapPin, Clock, Phone, Mail, Users } from "lucide-react";
+import { MapPin, Clock, Phone, Mail } from "lucide-react";
 
 const paragraphs = [
   "Bienvenidos a Green Garden desde nuestra apertura en el año 2016 nos dedicamos a brindar una experiencia gastronómica única en nuestra ciudad. Pensamos en cada detalle, en cada receta y en cada sistema de cocción. Para ello, en nuestras instalaciones de Diag 74 y 49 y 50, contamos con un primer piso de producción equipado con cámaras de frío positivo y negativo, un sector de envasado al vacío, sectores de guardado, sectores de producción específica y próximamente panadería artesanal.",
