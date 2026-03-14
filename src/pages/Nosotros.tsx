@@ -58,11 +58,11 @@ const NosotrosPage = () => {
 
       {/* Info cards */}
       <AnimatedSection delay={0.1}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {infoItems.map((item, i) => {
             const Icon = item.icon;
             const Inner = (
-              <div className="bg-card rounded-xl p-6 shadow-md flex flex-col items-center text-center gap-3 hover:shadow-lg transition-shadow h-full">
+              <div className="bg-card rounded-xl p-6 shadow-md flex flex-col items-center text-center gap-3 hover:shadow-lg transition-shadow h-full cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Icon className="text-primary" size={24} />
                 </div>
@@ -70,13 +70,21 @@ const NosotrosPage = () => {
                 <p className="text-muted-foreground text-sm">{item.content}</p>
               </div>
             );
-            return item.href ? (
-              <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="no-underline">
-                {Inner}
-              </a>
-            ) : (
-              <div key={i}>{Inner}</div>
-            );
+            if (item.href) {
+              return (
+                <a key={i} href={item.href} className="no-underline">
+                  {Inner}
+                </a>
+              );
+            }
+            if (item.action === "scroll-map") {
+              return (
+                <div key={i} onClick={() => document.getElementById("mapa-interactivo")?.scrollIntoView({ behavior: "smooth" })}>
+                  {Inner}
+                </div>
+              );
+            }
+            return <div key={i}>{Inner}</div>;
           })}
         </div>
       </AnimatedSection>
