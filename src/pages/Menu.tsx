@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ImageGallery from "@/components/ImageGallery";
+import LazyImage from "@/components/LazyImage";
 import { assetPath } from "@/lib/assetPath";
 
 const menuAlmuerzos = Array.from({ length: 19 }, (_, i) => ({
@@ -47,11 +48,12 @@ const MenuPage = () => {
       <div className="flex flex-col gap-6 md:gap-10 items-center mb-16 md:mb-24">
         {allAlmuerzos.map((img, i) => (
           <div key={i} className="w-full max-w-[1000px] text-center">
-            <img
+            <LazyImage
               src={img.src}
               alt={img.alt}
               onClick={() => openGallery(allAlmuerzos, i)}
               className="block mx-auto w-auto max-w-full max-h-[calc(100vh-12vh-4rem)] h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow duration-300"
+              wrapperClassName="min-h-[200px]"
             />
           </div>
         ))}
@@ -65,11 +67,12 @@ const MenuPage = () => {
         <div className="flex flex-col gap-6 md:gap-10 items-center">
           {menuMeriendas.map((img, i) => (
             <div key={i} className="w-full max-w-[1000px] text-center">
-              <img
+              <LazyImage
                 src={img.src}
                 alt={img.alt}
                 onClick={() => openGallery(menuMeriendas, i)}
                 className="block mx-auto w-auto max-w-full max-h-[calc(100vh-12vh-4rem)] h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                wrapperClassName="min-h-[200px]"
               />
             </div>
           ))}

@@ -3,6 +3,7 @@ import InfiniteCarousel from "@/components/InfiniteCarousel";
 import ActionButton from "@/components/ActionButton";
 import AliadosCarousel from "@/components/AliadosCarousel";
 import AnimatedSection from "@/components/AnimatedSection";
+import LazyImage from "@/components/LazyImage";
 import { assetPath } from "@/lib/assetPath";
 
 const bannerImages = [
@@ -72,17 +73,17 @@ const Index = () => {
         <section className="w-full px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-stretch gap-6 bg-muted rounded-xl p-6 shadow-md">
             <div className="grid grid-cols-2 gap-6">
-              <img
+              <LazyImage
                 src={assetPath("images/play1.webp")}
                 alt="Playroom - Juegos"
                 className="w-full h-full object-cover rounded-xl"
-                loading="lazy"
+                wrapperClassName="rounded-xl"
               />
-              <img
+              <LazyImage
                 src={assetPath("images/play2.webp")}
                 alt="Playroom - Juguetes"
                 className="w-full h-full object-cover rounded-xl"
-                loading="lazy"
+                wrapperClassName="rounded-xl"
               />
             </div>
             <div className="flex flex-col justify-center text-center p-4">
