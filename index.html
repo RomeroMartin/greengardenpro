@@ -4,26 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green Garden | Restaurante familiar en La Plata</title>
-    <meta name="description" content="Green Garden: restaurante familiar en La Plata. Almuerzos, cenas, desayunos y meriendas caseras. Playroom infantil con cámaras en vivo. Reservas: 0221-4895239." />
+    <meta name="description" content="Green Garden: restaurante familiar en La Plata con playroom infantil. Almuerzos, cenas, desayunos y meriendas caseras con la mejor materia prima. Diagonal 74 e/ 49 y 50. Reservas: 0221-4895239." />
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
-    <link rel="canonical" href="https://greengardenlaplata.com/" />
+    <link rel="canonical" href="https://romeromartin.github.io/greengardenpro/" />
     <meta name="author" content="Green Garden La Plata" />
     <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="restaurante La Plata, Green Garden, comida casera La Plata, playroom infantil La Plata, restaurante familiar La Plata, almuerzos La Plata, cenas La Plata, desayunos La Plata, meriendas La Plata, salón de eventos La Plata, cocina argentina La Plata, diagonal 74 La Plata" />
+    <meta name="geo.region" content="AR-B" />
+    <meta name="geo.placename" content="La Plata" />
+    <meta name="geo.position" content="-34.921;-57.955" />
+    <meta name="ICBM" content="-34.921, -57.955" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Green Garden | Restaurante familiar en La Plata" />
-    <meta property="og:description" content="Almuerzos, cenas, desayunos y meriendas caseras. Playroom infantil. Reservas: 0221-4895239." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://greengardenlaplata.com/" />
-    <meta property="og:image" content="/images/slide1.webp" />
+    <meta property="og:description" content="Almuerzos, cenas, desayunos y meriendas caseras. Playroom infantil con cámaras. Diagonal 74 e/ 49 y 50, La Plata. Reservas: 0221-4895239." />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://romeromartin.github.io/greengardenpro/" />
+    <meta property="og:image" content="/greengardenpro/images/slide1.webp" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:site_name" content="Green Garden" />
+    <meta property="restaurant:contact_info:street_address" content="Diagonal 74 entre 49 y 50" />
+    <meta property="restaurant:contact_info:locality" content="La Plata" />
+    <meta property="restaurant:contact_info:region" content="Buenos Aires" />
+    <meta property="restaurant:contact_info:country_name" content="Argentina" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Green Garden | Restaurante familiar en La Plata" />
-    <meta name="twitter:description" content="Almuerzos, cenas, desayunos y meriendas caseras. Playroom infantil." />
-    <meta name="twitter:image" content="/images/slide1.webp" />
+    <meta name="twitter:description" content="Restaurante familiar con playroom infantil en La Plata. Almuerzos, cenas, desayunos y meriendas." />
+    <meta name="twitter:image" content="/greengardenpro/images/slide1.webp" />
 
     <!-- JSON-LD Restaurant -->
     <script type="application/ld+json">
@@ -31,8 +40,9 @@
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "Green Garden",
-      "image": "/images/slide1.webp",
-      "url": "https://greengardenlaplata.com",
+      "description": "Restaurante familiar en La Plata con cocina casera argentina, playroom infantil y salón para eventos.",
+      "image": "https://romeromartin.github.io/greengardenpro/images/slide1.webp",
+      "url": "https://romeromartin.github.io/greengardenpro/",
       "telephone": "+54-221-489-5239",
       "email": "greengardenlaplata@gmail.com",
       "address": {
@@ -40,23 +50,51 @@
         "streetAddress": "Diagonal 74 entre 49 y 50",
         "addressLocality": "La Plata",
         "addressRegion": "Buenos Aires",
+        "postalCode": "1900",
         "addressCountry": "AR"
       },
-      "servesCuisine": "Cocina casera argentina",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.921,
+        "longitude": -57.955
+      },
+      "servesCuisine": ["Cocina casera argentina", "Cocina familiar", "Desayunos", "Meriendas"],
       "priceRange": "$$",
-      "openingHours": "Mo-Su 08:00-00:00",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "00:00"
+        }
+      ],
       "sameAs": [
-        "https://instagram.com/greengardenlaplata"
+        "https://instagram.com/greengardenlaplata",
+        "https://wa.me/542214895239"
       ],
       "hasMenu": {
         "@type": "Menu",
-        "url": "https://greengardenlaplata.com/menu"
+        "url": "https://romeromartin.github.io/greengardenpro/#/menu"
       },
-      "amenityFeature": {
-        "@type": "LocationFeatureSpecification",
-        "name": "Playroom infantil",
-        "value": true
-      }
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Playroom infantil",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Salón para eventos",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Wi-Fi gratuito",
+          "value": true
+        }
+      ],
+      "acceptsReservations": "True",
+      "paymentAccepted": "Efectivo, Tarjeta de débito, Tarjeta de crédito, Mercado Pago"
     }
     </script>
   </head>
