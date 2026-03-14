@@ -91,13 +91,13 @@ const NosotrosPage = () => {
 
       {/* Mapa interactivo */}
       <AnimatedSection delay={0.2}>
-        <div className="bg-card rounded-2xl shadow-lg overflow-hidden">
+        <div id="mapa-interactivo" className="bg-card rounded-2xl shadow-lg overflow-hidden">
           <h2 className="font-display text-2xl text-center py-6 text-foreground">
             ¿Cómo llegar?
           </h2>
           <iframe
             title="Ubicación de Green Garden La Plata"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.8!2d-57.955!3d-34.921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62f6b7c3d0d%3A0x0!2sDiagonal+74+%26+49%2C+La+Plata!5e0!3m2!1ses!2sar!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.5!2d-57.9567!3d-34.9213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62b5e72fbc1%3A0x5d81c2e95e3b1c0!2sDiag.+74+1618%2C+B1900BZV+La+Plata%2C+Provincia+de+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1700000000000"
             width="100%"
             height="350"
             style={{ border: 0 }}

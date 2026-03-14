@@ -70,7 +70,7 @@ const Index = () => {
 
       {/* Playroom Preview */}
       <AnimatedSection>
-        <section className="w-full px-8 py-16">
+        <section className="w-full px-8 py-6">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-stretch gap-6 bg-muted rounded-xl p-6 shadow-md">
             <div className="grid grid-cols-2 gap-6">
               <LazyImage
