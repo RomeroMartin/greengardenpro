@@ -1,5 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
-import { MapPin, Clock, Phone, Mail, Users } from "lucide-react";
+import { MapPin, Clock, Phone, Mail } from "lucide-react";
 
 const paragraphs = [
   "Bienvenidos a Green Garden desde nuestra apertura en el año 2016 nos dedicamos a brindar una experiencia gastronómica única en nuestra ciudad. Pensamos en cada detalle, en cada receta y en cada sistema de cocción. Para ello, en nuestras instalaciones de Diag 74 y 49 y 50, contamos con un primer piso de producción equipado con cámaras de frío positivo y negativo, un sector de envasado al vacío, sectores de guardado, sectores de producción específica y próximamente panadería artesanal.",
@@ -14,7 +14,8 @@ const infoItems = [
   {
     icon: MapPin,
     title: "Ubicación",
-    content: "Diagonal 74 entre 49 y 50, La Plata, Buenos Aires",
+    content: "Diag. 74 1618, B1900BZV La Plata, Provincia de Buenos Aires",
+    action: "scroll-map",
   },
   {
     icon: Clock,
@@ -25,18 +26,13 @@ const infoItems = [
     icon: Phone,
     title: "Reservas",
     content: "0221-489-5239",
-    href: "https://wa.me/542214895239",
+    href: "tel:02214895239",
   },
   {
     icon: Mail,
     title: "Email",
     content: "greengardenlaplata@gmail.com",
     href: "mailto:greengardenlaplata@gmail.com",
-  },
-  {
-    icon: Users,
-    title: "Capacidad",
-    content: "Salón para eventos, cumpleaños y reuniones familiares",
   },
 ];
 
@@ -62,11 +58,11 @@ const NosotrosPage = () => {
 
       {/* Info cards */}
       <AnimatedSection delay={0.1}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {infoItems.map((item, i) => {
             const Icon = item.icon;
             const Inner = (
-              <div className="bg-card rounded-xl p-6 shadow-md flex flex-col items-center text-center gap-3 hover:shadow-lg transition-shadow h-full">
+              <div className="bg-card rounded-xl p-6 shadow-md flex flex-col items-center text-center gap-3 hover:shadow-lg transition-shadow h-full cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Icon className="text-primary" size={24} />
                 </div>
@@ -74,26 +70,34 @@ const NosotrosPage = () => {
                 <p className="text-muted-foreground text-sm">{item.content}</p>
               </div>
             );
-            return item.href ? (
-              <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="no-underline">
-                {Inner}
-              </a>
-            ) : (
-              <div key={i}>{Inner}</div>
-            );
+            if (item.href) {
+              return (
+                <a key={i} href={item.href} className="no-underline">
+                  {Inner}
+                </a>
+              );
+            }
+            if (item.action === "scroll-map") {
+              return (
+                <div key={i} onClick={() => document.getElementById("mapa-interactivo")?.scrollIntoView({ behavior: "smooth" })}>
+                  {Inner}
+                </div>
+              );
+            }
+            return <div key={i}>{Inner}</div>;
           })}
         </div>
       </AnimatedSection>
 
       {/* Mapa interactivo */}
       <AnimatedSection delay={0.2}>
-        <div className="bg-card rounded-2xl shadow-lg overflow-hidden">
+        <div id="mapa-interactivo" className="bg-card rounded-2xl shadow-lg overflow-hidden">
           <h2 className="font-display text-2xl text-center py-6 text-foreground">
             ¿Cómo llegar?
           </h2>
           <iframe
             title="Ubicación de Green Garden La Plata"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.8!2d-57.955!3d-34.921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62f6b7c3d0d%3A0x0!2sDiagonal+74+%26+49%2C+La+Plata!5e0!3m2!1ses!2sar!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.5!2d-57.9567!3d-34.9213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62b5e72fbc1%3A0x5d81c2e95e3b1c0!2sDiag.+74+1618%2C+B1900BZV+La+Plata%2C+Provincia+de+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1700000000000"
             width="100%"
             height="350"
             style={{ border: 0 }}
