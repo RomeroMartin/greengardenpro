@@ -14,7 +14,8 @@ const infoItems = [
   {
     icon: MapPin,
     title: "Ubicación",
-    content: "Diagonal 74 entre 49 y 50, La Plata, Buenos Aires",
+    content: "Diag. 74 1618, B1900BZV La Plata, Provincia de Buenos Aires",
+    action: "scroll-map",
   },
   {
     icon: Clock,
@@ -25,18 +26,13 @@ const infoItems = [
     icon: Phone,
     title: "Reservas",
     content: "0221-489-5239",
-    href: "https://wa.me/542214895239",
+    href: "tel:02214895239",
   },
   {
     icon: Mail,
     title: "Email",
     content: "greengardenlaplata@gmail.com",
     href: "mailto:greengardenlaplata@gmail.com",
-  },
-  {
-    icon: Users,
-    title: "Capacidad",
-    content: "Salón para eventos, cumpleaños y reuniones familiares",
   },
 ];
 
